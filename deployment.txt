@@ -1,0 +1,12 @@
+sudo su
+sudo yum update -y
+sudo yum install docker -y
+
+sudo service docker start
+sudo systemctl enable docker
+
+
+sudo usermod -aG docker ec2-user
+docker pull yash2811/flipchat101:1.0
+
+docker run -td --name flipkart -p 8701:8701 yash2811/flipchat101:1.0
